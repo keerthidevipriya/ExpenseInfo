@@ -81,6 +81,15 @@ extension ExpenseListVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return dataModel.count
     }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            dataModel.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        } else if editingStyle == .insert {
+            navigateToAddExpense()
+        }
+    }
 }
 
 extension ExpenseListVC {
@@ -89,7 +98,7 @@ extension ExpenseListVC {
         navigationItem.rightBarButtonItem = UIBarButtonItem(
             barButtonSystemItem: .add,
             target: self,
-            action: #selector(addExpense))
+            action: #selector(navigateToAddExpense))
     }
 }
 
@@ -107,7 +116,7 @@ extension ExpenseListVC {
         navigationController?.pushViewController(rootVC, animated: true)
     }
     
-    @objc func addExpense() {
+    @objc func navigateToAddExpense() {
         let vc = ExpenseInputVC()
         vc.delegate = self
         self.navigationController?.pushViewController(vc, animated: true)

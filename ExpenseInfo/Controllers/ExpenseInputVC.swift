@@ -81,6 +81,5 @@ class ExpenseInputVC: UIViewController {
            !(amountTextField.text?.isEmpty ?? true) {
             self.delegate?.saveExpenseData(expType: expenseTypeTextField.text ?? "", amount: amountTextField.text ?? "")
         }
-        
     }
 }
