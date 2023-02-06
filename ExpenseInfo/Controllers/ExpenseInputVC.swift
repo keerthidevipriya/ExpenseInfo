@@ -19,17 +19,19 @@ class ExpenseInputVC: UIViewController {
     lazy var expenseTypeTextField: UITextField = {
         let textField = UITextField()
         textField.translatesAutoresizingMaskIntoConstraints = false
-        textField.backgroundColor = .white
+        textField.backgroundColor = .black
         textField.placeholder = "Enter expense Type"
+        textField.tintColor = .white
         return textField
     }()
     
     lazy var amountTextField: UITextField = {
         let textField = UITextField()
         textField.translatesAutoresizingMaskIntoConstraints = false
-        textField.backgroundColor = .white
+        textField.backgroundColor = .black
         textField.placeholder = "Enter amount"
         textField.keyboardType = .numberPad
+        textField.tintColor = .white
         return textField
     }()
 
@@ -37,8 +39,8 @@ class ExpenseInputVC: UIViewController {
         let button = UIButton()
         button.setTitle("Save", for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.backgroundColor = .black
-        button.setTitleColor(.white, for: .normal)
+        button.backgroundColor = .white
+        button.setTitleColor(.black, for: .normal)
         return button
     }()
     
@@ -49,7 +51,7 @@ class ExpenseInputVC: UIViewController {
     }
     
     func setupUI() {
-        view.backgroundColor = .white
+        view.backgroundColor = .clear
         btn.addTarget(self, action: #selector(saveTapped), for: .touchUpInside)
         view.addSubview(expenseTypeTextField)
         view.addSubview(amountTextField)

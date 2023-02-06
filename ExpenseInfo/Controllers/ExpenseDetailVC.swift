@@ -20,24 +20,25 @@ class ExpenseDetailVC: UIViewController {
     lazy var expenseTypeLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.backgroundColor = .white
-        label.textColor = .black
+        label.backgroundColor = .clear
+        label.textColor = .white
         return label
     }()
     
     lazy var amountLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.backgroundColor = .white
-        label.textColor = .black
+        label.backgroundColor = .black
+        label.textColor = .white
         return label
     }()
     
     lazy var updateAmtTextField: UITextField = {
         let textField = UITextField()
         textField.translatesAutoresizingMaskIntoConstraints = false
-        textField.backgroundColor = .white
+        textField.backgroundColor = .black
         textField.placeholder = "Enter amount to update"
+        textField.tintColor = .white
         return textField
     }()
 
@@ -45,8 +46,8 @@ class ExpenseDetailVC: UIViewController {
         let button = UIButton()
         button.setTitle("+", for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.backgroundColor = .black
-        button.setTitleColor(.white, for: .normal)
+        button.backgroundColor = .white
+        button.setTitleColor(.black, for: .normal)
         return button
     }()
     
@@ -54,8 +55,8 @@ class ExpenseDetailVC: UIViewController {
         let button = UIButton()
         button.setTitle("-", for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.backgroundColor = .black
-        button.setTitleColor(.white, for: .normal)
+        button.backgroundColor = .white
+        button.setTitleColor(.black, for: .normal)
         return button
     }()
     
@@ -79,7 +80,7 @@ class ExpenseDetailVC: UIViewController {
     }
     
     func setupUI() {
-        view.backgroundColor = .white
+        view.backgroundColor = .clear
         increaseBtn.addTarget(self, action: #selector(plusTapped), for: .touchUpInside)
         decreaseBtn.addTarget(self, action: #selector(minusTapped), for: .touchUpInside)
         

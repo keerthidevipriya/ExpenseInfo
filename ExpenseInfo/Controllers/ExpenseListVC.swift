@@ -94,7 +94,7 @@ extension ExpenseListVC: UITableViewDelegate, UITableViewDataSource {
 
 extension ExpenseListVC {
     func setupNavigation() {
-        navigationController?.navigationBar.backgroundColor = .white
+        navigationController?.navigationBar.backgroundColor = .clear
         navigationItem.rightBarButtonItem = UIBarButtonItem(
             barButtonSystemItem: .add,
             target: self,
